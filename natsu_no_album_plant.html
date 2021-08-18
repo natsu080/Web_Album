@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>natsu no album</title>
+<link rel="stylesheet" href="css/reset.css" type="text/css">
+<link rel="stylesheet" href="css/album.css" type="text/css">
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script>
+	
+	jQuery(function($) {
+		$.fn.extend({
+			randomdisp : function(num) {
+				return this.each(function() {
+					var chn = $(this).children().hide().length;
+					for(var i = 0; i < num && i < chn; i++) {
+						var r = parseInt(Math.random() * (chn - i)) + i;
+						$(this).children().eq(r).show().prependTo($(this));
+					}
+				});
+			}
+		});
+		$(function(){
+			$("[data-randomdisplay]").each(function() {
+				$(this).randomdisp($(this).attr("data-randomdisplay"));
+			});
+		});
+	});
+	
+</script>
+
+</head>
+
+<body>
+    
+    <header class="header item item-logo">
+    	<a href="#">
+        	<h1>Natsu<br/>no<br/>Album</h1>
+            <nav class="nav">
+            	<ul>
+                	<li class="nav-item"><a href="natsu_no_album.html">HOME</a></li>
+                    <li class="nav-item"><a href="natsu_no_album_scenery.html">SCENERY</a></li>
+                    <li class="nav-item"><a href="natsu_no_album_animal.html">ANIMAL</a></li>
+                    <li class="nav-item"><a href="natsu_no_album_food.html">FOOD</a></li>
+                    <li class="nav-item"><a href="natsu_no_album_plant.html">PLANT</a></li>
+                    <li class="nav-item"><a href="natsu_no_album_other.html">OTHER</a></li>
+                </ul>
+            </nav>
+        </a>
+    </header>
+    
+    <section data-randomdisplay="14">
+    
+    <section class="item item_l plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_l_1.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">日があって綺麗</p>
+        </a>
+    </section>
+    <section class="item plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_s_2.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">なかなか無いこの状態</p>
+        </a>
+    </section>
+    <section class="item plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_s_3.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">もう少し綺麗に・・・</p>
+        </a>
+    </section>
+    <section class="item item_m plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_m_1.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">見たことがなかったから一枚</p>
+        </a>
+    </section>
+    <section class="item plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_s_4.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">大学近くのバラ園。赤いバラはやはりきれい...</p>
+        </a>
+    </section>
+    <section class="item plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_s_5.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">白バラ</p>
+        </a>
+    </section>
+    <section class="item plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_s_6.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">白薔薇</p>
+        </a>
+    </section>
+    <section class="item plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_s_7.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">黄色の混じったバラは初めて...そして綺麗...</p>
+        </a>
+    </section>
+    <section class="item plant">
+        <a href="#">
+        	<img class="image" src="img/img(p)_s_8.jpg" alt="#">
+            <div class="category">PLANT</div>
+            <p class="description">定番の（色かもしれない）ピンク色のバラ</p>
+        </a>
+    </section>
+    
+    </section>
+    
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="js/masonry-docs.min.js" type="text/javascript"></script>
+    <script>
+		window.onload = function() {
+			new Masonry('body', {
+				itemSelector:'.item',
+				columnWidth:180,
+				isFitWidth:true,
+				gutter:15
+			});
+		};
+						
+	</script>
+
+</body>
+
+</html>
